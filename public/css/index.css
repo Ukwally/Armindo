@@ -158,6 +158,7 @@
   padding-left: 10px;
 }
 .banner-btn-set {
+  display: flex;
 }
 .banner-btn-set a {
   background-color: var(--dark10);
@@ -180,6 +181,9 @@
   );
   color: var(--color-green-700);
   border: 1px solid var(--color-green-200);
+}
+.banner-set .banner-produtos {
+  margin: auto;
 }
 .banner-set .banner-produtos .banner-produtos-set {
   box-shadow: 0 25px 60px -15px var(--tw-shadow-color, #0089bf33);
@@ -287,6 +291,9 @@
   font-weight: 500;
 }
 @media only screen and (min-width: 800px) {
+  .banner-set .banner-produtos {
+    margin: 0;
+  }
   .banner-set .banner-produtos .banner-produtos-set {
     width: 500px;
     height: 500px;
@@ -317,6 +324,7 @@
   background-color: var(--primary-Blue1);
   overflow: hidden;
   border-bottom: 0;
+  margin-bottom: 30px;
 }
 .section-produtos .div-produtos-set .div-produto .card-border {
   height: 5px;
@@ -526,7 +534,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 5% 0%;
+  padding: 2% 5% 5%;
 }
 .section-produtos .cta-produtos a {
   background-color: var(--primary-Blue10);
@@ -629,6 +637,7 @@
   display: flex;
   justify-content: space-around;
   margin-top: 40px;
+  flex-wrap: wrap;
 }
 .section-diferencial .diferencial-set .each-diferencial {
   background-color: var(--bg-light);
@@ -637,6 +646,7 @@
   border-radius: 15px;
   border-left: 2px solid var(--color-slate-200);
   transition: all 0.3s;
+  margin-bottom: 30px;
 }
 .section-diferencial .diferencial-set .each-diferencial:hover {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
@@ -675,11 +685,11 @@
   text-align: center;
 }
 .faqs-set {
-  padding: 0 10%;
+  padding: 0;
 }
 .faqs-set .each-faq {
   background-color: var(--primary-Blue1);
-  margin: 20px;
+  margin: 20px 0px;
   padding: 10px 13px;
   border-radius: 15px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.055);
@@ -721,4 +731,12 @@
   display: inline-flex;
   width: 100%;
   box-sizing: border-box;
+}
+@media only screen and (min-width:800px) {
+  .faqs-set {
+    padding: 0 10%;
+  }
+  .faqs-set .each-faq {
+    margin: 20px;
+  }
 }
