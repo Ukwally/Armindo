@@ -86,6 +86,15 @@ body {
   color: var(--dark15);
 }
 
+.texto-aculto-para-mobile {
+  display: none;
+}
+@media only screen and (width: 800px) {
+  .texto-aculto-para-mobile {
+    display: initial;
+  }
+}
+
 /*HEADER COSTOMISATION*/
 header {
   border-bottom: 1px solid var(--primary-Blue1);
@@ -226,7 +235,7 @@ footer .footer-section ul li .contact-icon {
     stroke: var(--primary-Blue7);
   }
 }
-footer .footer-section ul:last-child{
+footer .footer-section ul:last-child {
   display: flex;
   align-items: center;
 }
