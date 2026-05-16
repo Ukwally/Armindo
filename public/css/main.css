@@ -89,7 +89,7 @@ body {
 .texto-aculto-para-mobile {
   display: none;
 }
-@media only screen and (width: 800px) {
+@media only screen and (min-width: 800px) {
   .texto-aculto-para-mobile {
     display: initial;
   }
