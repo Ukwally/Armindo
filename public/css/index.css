@@ -698,6 +698,7 @@
   justify-content: space-between;
   border-radius: 10px;
   flex-wrap: wrap;
+  flex-direction: column;
 }
 .section-sobre
   .section-sobre-set
@@ -740,6 +741,12 @@
 @media only screen and (min-width: 800px) {
   .section-sobre .section-sobre-set .section-sobre-text {
     max-width: 50%;
+  }
+  .section-sobre
+    .section-sobre-set
+    .section-sobre-text
+    .section-sobre-cards-set {
+    flex-direction: row;
   }
 }
 /*SECTION FAQS COSTOMIZATION*/
