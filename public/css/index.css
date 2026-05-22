@@ -73,6 +73,7 @@
 .banner-set * {
   font-family:
     poppins,
+    ui-sans-serif,
     system-ui,
     -apple-system,
     BlinkMacSystemFont,
@@ -83,13 +84,13 @@
     Cantarell,
     "Open Sans",
     "Helvetica Neue",
-    sans-serif;
+    sans-serif !important;
   line-height: normal;
 }
 
 .font-poppins {
   font-family:
-    poppins,
+    ui-sans-serif,
     system-ui,
     -apple-system,
     BlinkMacSystemFont,
@@ -104,6 +105,7 @@
 }
 .font-normal {
   font-family:
+    ui-sans-serif,
     system-ui,
     -apple-system,
     BlinkMacSystemFont,
@@ -241,6 +243,8 @@
   text-transform: uppercase;
   font-size: 11px;
   box-shadow: 0 3px 6px 0px rgba(4, 108, 243, 0.219);
+  z-index: 2;
+  position: relative;
 }
 .banner-set .banner-produtos .banner-produtos-set .banner-produtos-head strong {
   color: var(--color-slate-700);
@@ -253,7 +257,6 @@
   align-items: center;
   justify-content: center;
   position: absolute;
-  z-index: 2;
   opacity: 0.2;
   top: 5px;
   left: 40px;
