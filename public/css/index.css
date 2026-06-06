@@ -247,7 +247,6 @@
   box-shadow: 0 3px 6px 0px rgba(4, 108, 243, 0.219);
   z-index: 2;
   position: relative;
-  margin-top: 15px;
 }
 .banner-set .banner-produtos .banner-produtos-set .banner-produtos-head strong {
   color: var(--color-slate-700);
