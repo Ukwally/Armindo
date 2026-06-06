@@ -236,6 +236,11 @@ footer .footer-section ul li .contact-icon {
     stroke: var(--primary-Blue7);
   }
 }
+footer .footer-section ul li .contact-link a{
+  color: inherit;
+  text-decoration: none;
+
+}
 footer .footer-section ul:last-child {
   display: flex;
   align-items: center;

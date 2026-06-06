@@ -150,9 +150,11 @@
 }
 .banner-set h1 {
   font-size: 4rem;
+  margin-block-end: 0;
 }
 .banner-set h3 {
   font-size: 3rem;
+  margin-block-start: 15px;
 }
 .banner-set p {
   font-size: 1.8rem;
@@ -245,6 +247,7 @@
   box-shadow: 0 3px 6px 0px rgba(4, 108, 243, 0.219);
   z-index: 2;
   position: relative;
+  margin-top: 15px;
 }
 .banner-set .banner-produtos .banner-produtos-set .banner-produtos-head strong {
   color: var(--color-slate-700);
@@ -294,6 +297,15 @@
   font-weight: 500;
 }
 @media only screen and (min-width: 800px) {
+  .banner-set h1 {
+    font-size: 4rem;
+    margin-block-end: 0.67em;
+  }
+  .banner-set h3 {
+    font-size: 3rem;
+    margin-block-start: 1em;
+  }
+
   .banner-set .banner-produtos {
     margin: 0;
   }
@@ -302,6 +314,10 @@
     height: 500px;
     margin-bottom: 0;
   }
+  .banner-set .banner-produtos .banner-produtos-set .banner-produtos-head span {
+    margin-top: 0;
+  }
+
 }
 /*SECTION BANNER2 APRESENTAÇÃO*/
 /*SECTION PRODUTOS*/
