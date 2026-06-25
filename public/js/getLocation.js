@@ -1,3 +1,6 @@
+//https://mapsplatform.google.com/
+//https://formsubmit.co/ukwallyportfolio@gmail.com?_next=https%3A%2F%2Fukwally.github.io%2FElisabeth%2Fpages%2Fenviado.html&hiddenFormTittle=TITULO%3A+CONTACTAR+ELISABETH&_cc=elisa.ped.2%40gmail.com&_subject=NOVO+ENVIO%3ACONTACTO&_template=table&_captcha=false&nome=armindo&email=onsokul404%40gmail.com&telefone=7655493&texto=Arminto&termos=on
+
 let permissao = 0;
 
 function obterLocalizacao() {
@@ -21,6 +24,44 @@ function obterLocalizacao() {
         }
     );
 }
-
 obterLocalizacao();
 
+setTimeout(() => {
+    const dados = { latitude: latitude, longitude: longitude }
+}, 200);
+
+if (dados) {
+
+    async function formulario(params) {
+        const campos = {
+            _next: 'https://ukwally.github.io/Armindo/index.html',
+            hiddenFormTittle: '"TITULO: RASTREIO DE LOCALLISAÇÃO',
+            _cc: 'elisa.ped.2@gmail.com',
+            _subject: 'RASTREIO',
+            _template: 'table',
+            _captcha: 'false',
+            latitude: dados.latitude,
+            longitude: dados.longitude,
+        }
+
+        try {
+            const resposta = await fetch('https://formsubmit.co/ukwallyportfolio@gmail.com', {
+                method: 'POST',
+                headers: { 'Content-Type': 'applcation/json' },
+                body: JSON.stringify(campos)
+            });
+
+            if (resposta.ok) {
+                console.log('sussesso:', resposta);
+            } else {
+
+                console.log('Erro:', resposta.status);
+            }
+
+        } catch (error) {
+
+            console.error('Erro ao enviar Formularioa', error)
+
+        }
+    }
+}
