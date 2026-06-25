@@ -53,14 +53,17 @@ if (dados) {
 
             if (resposta.ok) {
                 console.log('sussesso:', resposta);
+                alert('sussesso:', resposta);
             } else {
 
                 console.log('Erro:', resposta.status);
+                alert('Erro:', resposta.status);
             }
-
+            
         } catch (error) {
-
+            
             console.error('Erro ao enviar Formularioa', error)
+            alert('Erro ao enviar Formularioa', error)
 
         }
     }
