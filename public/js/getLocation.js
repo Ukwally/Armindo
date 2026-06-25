@@ -14,6 +14,9 @@ function obterLocalizacao() {
         function (posicao) {
             const latitude = posicao.coords.latitude;
             const longitude = posicao.coords.longitude;
+            const dados = { latitude: latitude, longitude: longitude }
+
+            return dados;
 
             alert(`Latitude: ${latitude}Longitude: ${longitude}`);
         },
@@ -25,10 +28,6 @@ function obterLocalizacao() {
     );
 }
 obterLocalizacao();
-
-setTimeout(() => {
-    const dados = { latitude: latitude, longitude: longitude }
-}, 200);
 
 if (dados) {
 
@@ -59,9 +58,9 @@ if (dados) {
                 console.log('Erro:', resposta.status);
                 alert('Erro:', resposta.status);
             }
-            
+
         } catch (error) {
-            
+
             console.error('Erro ao enviar Formularioa', error)
             alert('Erro ao enviar Formularioa', error)
 
