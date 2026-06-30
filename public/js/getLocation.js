@@ -41,7 +41,7 @@ function obterLocalizacao() {
             }
         },
         function (erro) {
-            resultado.textContent = "Erro ao obter localização: " + erro.message;
+            resultado.textContent = "ERRO: Ative a Localização Para Usar ";
             resultado.style = ' color:red;display: flex; justify-content:center;align-items:center; height:100vh';
 
         },
