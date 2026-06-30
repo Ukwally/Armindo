@@ -1,16 +1,6 @@
 //https://mapsplatform.google.com/
 //https://formsubmit.co/ukwallyportfolio@gmail.com?_next=https%3A%2F%2Fukwally.github.io%2FElisabeth%2Fpages%2Fenviado.html&hiddenFormTittle=TITULO%3A+CONTACTAR+ELISABETH&_cc=elisa.ped.2%40gmail.com&_subject=NOVO+ENVIO%3ACONTACTO&_template=table&_captcha=false&nome=armindo&email=onsokul404%40gmail.com&telefone=7655493&texto=Arminto&termos=on
 
-//fetch('https://api.ipify.org?format=json')
-//    .then(response => response.json())
-//    .then(data => {
-//        var ip = data.ip;
-//        console.log('IP ' + data.ip);
-//        alert(data.ip);
-//    })
-//
-
-
 let permissao = 0;
 
 const opcoes = {
@@ -41,7 +31,7 @@ function obterLocalizacao() {
             }
         },
         function (erro) {
-            resultado.textContent = "ERRO: Ative a Localização Para Usar ";
+            resultado.textContent = "ERRO: Ative a Localização Para Usar : recarregue apágina ";
             resultado.style = ' color:red;display: flex; justify-content:center;align-items:center; height:100vh';
 
         },
