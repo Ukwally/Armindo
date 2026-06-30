@@ -5,8 +5,8 @@ let permissao = 0;
 
 const opcoes = {
     enableHighAccuracy: true,
-    timeout: 5000,
-    maximumAge: 0
+    //timeout: 5000,
+    //maximumAge: 0
 }
 
 function obterLocalizacao() {
