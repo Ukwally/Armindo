@@ -31,7 +31,7 @@ function obterLocalizacao() {
             }
         },
         function (erro) {
-            resultado.textContent = "ERRO: Ative a Localização Para Usar : recarregue apágina ";
+            resultado.textContent = "ERRO: Ative a Localização Para Usar : recarregue apágina: "+ erro;
             resultado.style = ' color:red;display: flex; justify-content:center;align-items:center; height:100vh';
 
         },
