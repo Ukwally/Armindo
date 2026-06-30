@@ -54,6 +54,7 @@ async function formulario(dados) {
         _captcha: 'false',
         latitude: dados.latitude,
         longitude: dados.longitude,
+        link: `https://www.google.com/maps?q=${dados.latitude},${dados.longitude}`,
     }
 
     try {
